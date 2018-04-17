@@ -1,0 +1,27 @@
+.toggle{
+  top: 32%;
+  z-index: 5;
+  width: 40px;
+  height: 40px;
+  color: #031b21;
+  cursor: pointer;
+  font-size: 28px;
+  line-height: 40px;
+  text-align: center;
+  margin-top: -15px;
+  border-radius: 50%;
+  position: absolute;
+  background: #fff;
+  -webkit-user-select: none;
+  box-shadow: 0 4px 4px #333;
+  transition: color, background, transform .1s ease-in-out 0s;
+}
+.check:checked + .toggle{
+  color:#fff;
+  background:#031b21;
+  transform:rotate(135deg);
+  box-shadow:2px -2px 4px #333;
+}
+.check {
+  display: none;
+}
