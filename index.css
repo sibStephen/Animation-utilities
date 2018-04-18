@@ -1,5 +1,17 @@
+/* common classes */
+.p-relative {
+  position: relative;
+}
+.p-t-60 {
+  padding-top: 60px;
+}
+.p-20 {
+  padding: 20px;
+}
+
+
+/* Toggle css */
 .toggle{
-  top: 32%;
   z-index: 5;
   width: 40px;
   height: 40px;
@@ -15,6 +27,8 @@
   -webkit-user-select: none;
   box-shadow: 0 4px 4px #333;
   transition: color, background, transform .1s ease-in-out 0s;
+  top: 98px;
+  left: 98px;
 }
 .check:checked + .toggle{
   color:#fff;
@@ -25,3 +39,127 @@
 .check {
   display: none;
 }
+
+
+/* Infinite Rotator using keyframes */
+.spiralContainer {
+  border-radius: 50%;
+  width:200px;
+  height:200px;
+  overflow:hidden;
+  margin:20px;
+
+  -webkit-animation: spin 3s linear 0s infinite reverse;
+  -moz-animation: spin 3s linear 0s infinite reverse;
+  -ms-animation: spin 3s linear 0s infinite reverse;
+  -o-animation: spin 3s linear 0s infinite reverse;
+  animation: spin 3s linear 0s infinite reverse;
+
+  -webkit-animation-play-state: paused;
+  -moz-animation-play-state: paused;
+  -ms-animation-play-state: paused;
+  -o-animation-play-state: paused;
+  animation-play-state: paused;
+}
+.spiral {
+  width:200px;
+  height:200px;
+  border-radius: 50%;
+  background-image: url(https://decembersoft.com/images/2016/swirl-1243159.jpg);
+  background-repeat:no-repeat;
+  background-position:33% 7%;
+
+
+  -webkit-animation: spin 6s linear 0s infinite normal;
+  -moz-animation: spin 6s linear 0s infinite normal;
+  -ms-animation: spin 6s linear 0s infinite normal;
+  -o-animation: spin 6s linear 0s infinite normal;
+  animation: spin 6s linear 0s infinite normal;
+}
+.spiralContainer:hover {
+  -webkit-animation-play-state: running;
+  -moz-animation-play-state: running;
+  -ms-animation-play-state: running;
+  -o-animation-play-state: running;
+  animation-play-state: running;
+}
+@keyframes spin {
+  0% { transform: rotate(360deg); }
+  100% { transform: rotate(0deg); }
+}
+@-webkit-keyframes spin {
+  0% {-webkit-transform: rotate(360deg); }
+  100% { -webkit-transform: rotate(0deg); }
+}
+@-ms-keyframes spin {
+  0% {-ms-transform: rotate(360deg); }
+  100% { -ms-transform: rotate(0deg); }
+}
+@-moz-keyframes spin {
+  0% { -moz-transform: rotate(360deg); }
+  100% { -moz-transform: rotate(0deg); }
+}
+@-o-keyframes spin {
+  0% { -o-transform: rotate(360deg); }
+  100% { -o-transform: rotate(0deg); }
+}
+
+/* On hover upside down */
+.on-hover {
+  width: 20%;
+  text-align: center;
+}
+.on-hover:hover .services-item-title {
+  -webkit-transform: translate3d(0, -75px, 0);
+  transform: translate3d(0, -75px, 0);
+}
+.on-hover {
+  margin-top: 40px;
+  text-align: center;
+}
+ .services-item-title {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transition: -webkit-transform 0.7s cubic-bezier(0.26, 0.86, 0.44, 0.985) 0s;
+  transition: transform 0.7s cubic-bezier(0.26, 0.86, 0.44, 0.985) 0s;
+}
+.on-hover:hover .on-hover-text {
+    opacity: 1;
+    -webkit-transform: translate3d(0, -70px, 0);
+    transform: translate3d(0, -70px, 0);
+    -webkit-transition: -webkit-transform 0.7s cubic-bezier(0.26, 0.86, 0.44, 0.985) 0s, opacity 0.3s cubic-bezier(0.26, 0.86, 0.44, 0.985) 0s;
+    transition: transform 0.7s cubic-bezier(0.26, 0.86, 0.44, 0.985) 0s, opacity 0.3s cubic-bezier(0.26, 0.86, 0.44, 0.985) 0s;
+}
+.on-hover:hover .on-hover-icon {
+    opacity: 0;
+    -webkit-transform: rotate3d(1, 0, 0, 80deg) translate3d(0, -50px, 50px);
+    transform: rotate3d(1, 0, 0, 80deg) translate3d(0, -50px, 50px);
+    -webkit-transition: -webkit-transform 0.7s cubic-bezier(0.26, 0.86, 0.44, 0.985) 0s, opacity 0.3s cubic-bezier(0.26, 0.86, 0.44, 0.985) 0.2s;
+    transition: transform 0.7s cubic-bezier(0.26, 0.86, 0.44, 0.985) 0s, opacity 0.3s cubic-bezier(0.26, 0.86, 0.44, 0.985) 0.2s;
+}
+.on-hover:hover .services-item-title {
+  -webkit-transform: translate3d(0, -75px, 0);
+  transform: translate3d(0, -75px, 0);
+
+}
+.on-hover-text {
+  opacity: 0;
+  -webkit-transform: rotate3d(1, 0, 0, -90deg) translate3d(0, 50px, 0);
+  transform: rotate3d(1, 0, 0, -90deg) translate3d(0, 50px, 0);
+  -webkit-transition: -webkit-transform 0.7s cubic-bezier(0.26, 0.86, 0.44, 0.985) 0s, opacity 0.2s cubic-bezier(0.26, 0.86, 0.44, 0.985) 0.3s;
+  transition: transform 0.7s cubic-bezier(0.26, 0.86, 0.44, 0.985) 0s, opacity 0.2s cubic-bezier(0.26, 0.86, 0.44, 0.985) 0.3s;
+}
+.on-hover-text {
+  color: #262649;
+}
+.on-hover-icon:hover {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-transition: -webkit-transform 0.7s cubic-bezier(0.26, 0.86, 0.44, 0.985) 0s, opacity 0.3s cubic-bezier(0.26, 0.86, 0.44, 0.985) 0s;
+    transition: transform 0.7s cubic-bezier(0.26, 0.86, 0.44, 0.985) 0s, opacity 0.3s cubic-bezier(0.26, 0.86, 0.44, 0.985) 0s;
+
+}
+.fa-css3 {
+  font-size: 30px;
+}
+
